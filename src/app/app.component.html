@@ -1,28 +1,25 @@
 <div class="container">
+
   <h1>Lista de Compras do Shopping</h1>
-
   <div class="row">
-
     <!-- To Buy List -->
     <div class="col-md-6">
      <h2>Pra Comprar:</h2>
      <ul>
-       <li *ngFor="let item of listToBuy">Comprar {{item.quantidade}} {{item.nome}} <button class="btn btn-default" (click)="trocaColuna(item)"> Comprar</button></li>
+       <li *ngFor="let item of listToBuy">Comprar {{item.quantidade}} {{item.nome}} <button class="btn btn-default" (click)="trocaColuna(listToBuy.indexOf(item))"> Comprar</button></li>
      </ul>
      <div class="emptyMessage" *ngIf="allBuy">Tudo está comprado!</div>
     </div>
-
     <!-- Already Bought List -->
     <div class="col-md-6">
      <h2>Já Comprado:</h2>
      <div class="emptyMessage" *ngIf="nothingBuy; else mostraLista">Nada comprado ainda.</div>
      <ng-template #mostraLista>
-      <ul *ngFor="let item of listToBuy" id="ul-comprado">
+      <ul *ngFor="let item of items" id="ul-comprado">
         <li class="li-lista2">Foram comprados {{item.quantidade}} {{item.nome}}</li>
       </ul>
      </ng-template>
     </div>
   </div>
 </div>
-
 <router-outlet></router-outlet>
