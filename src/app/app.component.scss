@@ -1,0 +1,22 @@
+.container{
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+}
+
+li{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.li-lista2{
+    margin-bottom: 25px;
+}
+
+button{
+    background-color: rgb(56, 131, 243);
+}
+
+.emptyMessage{
+    color: rgb(222, 39, 39);
+}
